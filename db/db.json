@@ -1,12 +1,12 @@
 [
     {
-        "title": "Test",
-        "text": "This is only a test",
-        "id": "0db3"
+        "title": "JSON ",
+        "text": "Practice using JSON objects",
+        "id": "e2a2"
     },
     {
-        "title": "It works!",
-        "text": "Hooray!!!",
-        "id": "3833"
+        "title": "Study Topics",
+        "text": "Express.js\nCSS - Flexboxes \nSQL",
+        "id": "9c49"
     }
 ]
