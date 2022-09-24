@@ -6,6 +6,17 @@ notes.get('/', (req, res) => {
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)))
 });
 
+notes.get('/:id', (req, res) =>{
+    const noteId = req.params.note_id;
+    readFromFile('./db/db.json').then((data) => JSON.parse(data)).then((json) => {
+        const result = json.filter((note) => note.note_id === noteId);
+        
+        return result.length > 0
+        ? res.json(result)
+        : res.json('Invalid note id');
+    });
+});
+
 notes.post('/', (req, res) => {
     const { title, text } = req.body;
 
@@ -13,7 +24,7 @@ notes.post('/', (req, res) => {
         const newNote = {
             title,
             text,
-            note_id: uuid(),
+            id: uuid(),
         };
         readAndAppend(newNote, './db/db.json');
 
@@ -27,12 +38,14 @@ notes.post('/', (req, res) => {
     }
 });
 
-notes.delete('/:note_id', (req, res) => {
+notes.delete('/:id', (req, res) => {
     const noteId = req.params.note_id;
     readFromFile('./db/db.json').then((data) => JSON.parse(data)).then((json) =>{
         const result = json.filter((note) => note.note_id !== noteId);
 
         writeToFile('./db/db.json', result);
+
+        res.json(`Note ${noteId} was deleted`);
 
     });
 });
