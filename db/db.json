@@ -1,21 +1,12 @@
 [
     {
-        "title": "Test Title",
-        "text": "Test text"
+        "title": "Test",
+        "text": "This is only a test",
+        "id": "0db3"
     },
     {
-        "title": "Test note",
-        "text": "This is only a test of the note abilities",
-        "note_id": "9fe4"
-    },
-    {
-        "title": "This seems to be working",
-        "text": "Omg this is working",
-        "note_id": "907f"
-    },
-    {
-        "title": "Test 3",
-        "text": "Once again\n",
-        "note_id": "90f7"
+        "title": "It works!",
+        "text": "Hooray!!!",
+        "id": "3833"
     }
 ]
